@@ -22,12 +22,21 @@ function App() {
   //console.log(courseGoals);
 
 
+  //---------------delete element With id --------------------------
+  const deleteItemhandler = goalID => {
+    setCourseGoals(prevgoals => {
+      const updatedData =[...prevgoals].filter(goal => goal.id !== goalID);
+      return updatedData ;
+    });
+  }
+
+
 
   let content = ( <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>)
 
   if(courseGoals.length > 0){
     content =(
-      <CourseGoalList items={courseGoals}></CourseGoalList>
+      <CourseGoalList items={courseGoals} onDeleteItem={deleteItemhandler}></CourseGoalList>
     );
   }
 
