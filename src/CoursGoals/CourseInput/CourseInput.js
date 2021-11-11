@@ -1,5 +1,6 @@
 import  { useState } from "react";
 import './CoursInput.css';
+import Button from "../../UI/Button";
 const CourseInput = (props) => {
     const [isValid, setIsvalid] = useState(true);
     const [enteredData , setEnteredData] = useState('');
@@ -26,7 +27,7 @@ const CourseInput = (props) => {
                 <label>Cours Goal</label>
                 <input   type="text" onChange={goalInputChangeHandler}></input>
             </div>
-            <button type="submit">add goal</button>
+            <Button type="submit">Add Goal</Button>
         </form>
     )
 };
